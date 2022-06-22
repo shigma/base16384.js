@@ -1,0 +1,27 @@
+{
+  "name": "base16384",
+  "description": "Base16384 encoder and decoder",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "bin": "lib/bin.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shigma/base16384.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shigma/base16384/issues"
+  },
+  "homepage": "https://github.com/shigma/base16384",
+  "author": "Shigma <shigma10826@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "typescript": "^4.7.2"
+  }
+}
