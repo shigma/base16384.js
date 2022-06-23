@@ -1,30 +1,24 @@
 export function encode(input: string | Uint8Array) {
-  const output: number[] = []
-  function push(code: number, base = 0x4e00) {
-    code += base
-    output.push(code & 0xff)
-    output.push((code >> 8) & 0xff)
-  }
-
   if (typeof input === 'string') {
-    input = Buffer.from(input)
+    input = new TextEncoder().encode(input)
   }
 
-  let offset = 0, rest = 0
-  for (let i = 0; i < input.length; i++) {
+  let offset = 0, rest = 0, output = ''
+  for (const byte of input) {
     offset += 8
     if (offset < 14) {
-      rest += input[i] << (14 - offset)
+      rest += (byte << (14 - offset)) & 0x3fff
       continue
     }
     offset -= 14
-    push(rest + (input[i] >> offset))
-    rest = (input[i] << (14 - offset)) & 0x3fff
-  }
-  if (offset) {
-    push(rest)
-    push(input.length % 7, 0x3d00)
+    output += String.fromCharCode(rest + (byte >> offset) + 0x4e00)
+    rest = (byte << (14 - offset)) & 0x3fff
   }
 
-  return Buffer.from(output).toString('utf16le')
+  if (offset) {
+    output += String.fromCharCode(rest + 0x4e00)
+    output += String.fromCharCode(input.length % 7 + 0x3d00)
+  }
+
+  return output
 }
