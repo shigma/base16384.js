@@ -1,6 +1,11 @@
 import assert from 'assert'
 import { decode, encode, toUint16Array, toUint8Array } from '../src'
 
+it('example', () => {
+  const buffer = encode('Example')
+  assert.equal(new TextDecoder().decode(decode(buffer)), 'Example')
+})
+
 it('encode', () => {
   assert.deepEqual(encode(''), toUint16Array('㴀'))
   assert.deepEqual(encode('1'), toUint16Array('婀㴁'))
