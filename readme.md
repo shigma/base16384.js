@@ -1,9 +1,9 @@
 # Base16384
 
-[![Codecov](https://img.shields.io/codecov/c/github/shigma/base16384.js?style=flat-square)](https://codecov.io/gh/shigma/base16384.js)
+[![Codecov](https://img.shields.io/codecov/c/github/shigma/base16384?style=flat-square)](https://codecov.io/gh/shigma/base16384)
 [![downloads](https://img.shields.io/npm/dm/base16384?style=flat-square)](https://www.npmjs.com/package/base16384)
 [![npm](https://img.shields.io/npm/v/base16384?style=flat-square)](https://www.npmjs.com/package/base16384)
-[![GitHub](https://img.shields.io/github/license/shigma/base16384.js?style=flat-square)](https://github.com/shigma/base16384.js/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/license/shigma/base16384?style=flat-square)](https://github.com/shigma/base16384/blob/master/LICENSE)
 
 A unicode-based encoding scheme that presents binary data (sequence of 8-bit bytes) in sequences of 14-bit printable Chinese characters. It saves 17% space compared to base64.
 
